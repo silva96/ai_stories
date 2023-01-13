@@ -1,0 +1,43 @@
+# Do not modify this file at all.
+---
+inherit_mode:
+  merge:
+    - Exclude
+    - ExcludedMethods
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'db/data_migrations/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/routes.rb'
+    - 'spec/factories/*'
+  AllowedMethods:
+    - context
+    - describe
+    - define_type
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyCaseCondition:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+

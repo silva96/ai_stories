@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AiStories</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="isolate bg-slate-50 min-h-screen">
+      <%= yield(:pre_navbar_content) if content_for?(:pre_navbar_content) %>
+      <%= render partial: 'layouts/navbar' %>
+      <main class="pt-8">
+        <%= yield %>
+      </main>
+      <footer class="text-center mt-12">
+        <p>Created by Benjamín Silva</p>
+        <p><a class="text-indigo-600 hover:text-indigo-900" href="https://twitter.com/bsilva96">@bsilva96</a> in Twitter</p>
+        <p class="my-4"><a href="https://www.paypal.com/donate/?hosted_button_id=TKN2THHAQAYX8" class="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">Donate</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

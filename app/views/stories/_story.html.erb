@@ -1,0 +1,6 @@
+<% if story.pages.any? %>
+  <%= render partial: 'pages/page', locals: { page: story.pages.order(number: :asc).first } %>
+<% else %>
+  <%= turbo_stream_from story %>
+  <p class="text-2xl text-center h-96">Please wait, your story is being generated ...</p>
+<% end %>
