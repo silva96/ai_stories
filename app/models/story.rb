@@ -18,7 +18,7 @@ class Story < ApplicationRecord
   end
 
   def to_param
-    [id, title.parameterize].join('-')
+    [id, title&.parameterize].compact.join('-')
   end
 
   private
