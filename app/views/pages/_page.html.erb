@@ -11,16 +11,16 @@
         <%= p %>.
       </p>
     <% end %>
-    <div class="text-right">
+    <div class="text-right mb-8">
       <% if page.prev_page.present? %>
-        <%= link_to story_page_path(story_id: page.story, id: page.prev_page.number), data: { page_navigation_target: 'prevPage' },
+        <%= link_to story_page_path(story_id: page.story, id: page.prev_page.number, anchor: 'page-wrapper'), data: { page_navigation_target: 'prevPage' },
                     class: 'inline-block rounded-lg bg-indigo-400 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-400 hover:bg-indigo-500 hover:ring-indigo-500 mr-4' do %>
           <%= t('prev_page') %>
           <span class="text-indigo-100" aria-hidden="true">&larr;</span>
         <% end %>
       <% end %>
       <% if page.next_page.present? %>
-        <%= link_to story_page_path(story_id: page.story, id: page.next_page.number), data: { page_navigation_target: 'nextPage' },
+        <%= link_to story_page_path(story_id: page.story, id: page.next_page.number, anchor: 'page-wrapper'), data: { page_navigation_target: 'nextPage' },
                     class: 'inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700' do %>
           <%= t('next_page') %>
           <span class="text-indigo-200" aria-hidden="true">&rarr;</span>

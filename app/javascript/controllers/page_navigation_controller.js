@@ -5,11 +5,12 @@ export default class extends Controller {
   static targets = ['prevPage', 'nextPage']
 
   connect () {
-    document.addEventListener('keydown', this.handleArrowNavigation.bind(this))
+    this.listener = this.handleArrowNavigation.bind(this)
+    document.addEventListener('keydown', this.listener)
   }
 
   disconnect () {
-    document.addEventListener('keydown', this.handleArrowNavigation.bind(this))
+    document.removeEventListener('keydown', this.listener)
   }
 
   handleArrowNavigation (event) {
@@ -21,10 +22,10 @@ export default class extends Controller {
   }
 
   prevPage () {
-    this.prevPageTarget.click()
+    if (this.hasPrevPageTarget) { this.prevPageTarget.click() }
   }
 
   nextPage () {
-    this.nextPageTarget.click()
+    if (this.hasNextPageTarget) { this.nextPageTarget.click() }
   }
 }
