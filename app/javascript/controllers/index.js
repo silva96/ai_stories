@@ -4,5 +4,8 @@
 
 import { application } from './application'
 
+import PageNavigationController from './page_navigation_controller'
+
 import ToggableController from './toggable_controller'
+application.register('page-navigation', PageNavigationController)
 application.register('toggable', ToggableController)
