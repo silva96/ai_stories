@@ -17,11 +17,9 @@ class CreatePageImagesJob < ApplicationJob
 
   def create_image(page)
     client = OpenAI::Client.new
-    client.images.generate(
-      parameters: {
-        prompt: "#{page.story.image_style} photo for a kid's book about this scene: #{page.content}", n: 1
-      }
-    )
+    prompt = "Create a #{page.story.image_style} illustration for a kid's book " \
+             "representing the following scene:\n\n #{page.content}"
+    client.images.generate(parameters: { prompt:, n: 1 })
   end
 
   def update_image(page, page_id, response, story_id)
