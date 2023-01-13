@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'boot'
+require_relative '../app/lib/constants'
 
 require 'rails'
 # Pick the frameworks you want:
@@ -33,6 +34,8 @@ module AiStories
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.i18n.available_locales = Constants::AVAILABLE_LOCALES
+    config.i18n.default_locale = 'en'
     # Don't generate system test files.
     config.generators.system_tests = nil
   end

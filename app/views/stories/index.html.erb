@@ -1,12 +1,12 @@
 <div class="mx-auto max-w-3xl px-8">
-  <h1 class="text-3xl mb-8">Stories</h1>
+  <h1 class="text-3xl mb-8"><%= t('community_stories') %></h1>
   <ul role="list" class="space-y-3">
     <% @stories.each do |story| %>
       <li class="overflow-hidden rounded-md bg-white px-6 py-4 shadow">
         <h2 class="text-2xl mb-4"><%= story.title %></h2>
         <p><%= story.excerpt %></p>
         <div class="text-right mt-4">
-          <%= link_to 'Read story', story_path(story), class: 'text-indigo-600 hover:text-indigo-900' %>
+          <%= link_to t('read_story'), story_path(story), class: 'text-indigo-600 hover:text-indigo-900' %>
         </div>
       </li>
     <% end %>

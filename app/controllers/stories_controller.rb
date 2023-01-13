@@ -6,7 +6,7 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find(params[:id])
+    @story = Story.find(params[:id].to_i)
     redirect_to new_story_path unless @story
   end
 
@@ -27,6 +27,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:main_character, :secondary_character, :villian, :image_style, :extra_details)
+    params.require(:story).permit(:main_character, :secondary_character, :villain, :image_style, :extra_details)
   end
 end
