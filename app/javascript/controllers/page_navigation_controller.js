@@ -5,11 +5,11 @@ export default class extends Controller {
   static targets = ['prevPage', 'nextPage']
 
   connect () {
-    document.addEventListener('keydown', this.handleArrowNavigation)
+    document.addEventListener('keydown', this.handleArrowNavigation.bind(this))
   }
 
   disconnect () {
-    document.addEventListener('keydown', this.handleArrowNavigation)
+    document.addEventListener('keydown', this.handleArrowNavigation.bind(this))
   }
 
   handleArrowNavigation (event) {
