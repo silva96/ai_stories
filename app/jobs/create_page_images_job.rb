@@ -15,10 +15,28 @@ class CreatePageImagesJob < ApplicationJob
 
   private
 
+  def create_prompt(page)
+    response = create_prompt_content(page)
+    response['choices'][0]['text'].strip
+  end
+
+  def create_prompt_content(page)
+    client = OpenAI::Client.new
+    prompt = "generate a prompt for dall-e to represent this scene with an illustration:\n\n#{page.content}" \
+             "\n\nHaving this context in mind:\n\n#{page.story.main_character}\n#{page.story.secondary_character}."
+
+    client.completions(
+      parameters: {
+        model: 'text-davinci-003',
+        prompt:, max_tokens: (DAVINCI_MAX_TOKENS - prompt.size)
+      }
+    )
+  end
+
   def create_image(page)
     client = OpenAI::Client.new
     prompt = "Create a #{page.story.image_style} illustration for a kid's book " \
-             "representing the following scene:\n\n #{page.content}"
+             "representing the following scene:\n\n #{create_prompt(page)}"
     client.images.generate(parameters: { prompt:, n: 1 })
   end
 
