@@ -2,7 +2,7 @@
 
 class PagesController < ApplicationController
   def show
-    @page = Page.find_by(story_id: params[:story_id], number: params[:id])
+    @page = Page.find_by(story_id: params[:story_id].to_i, number: params[:id])
     return unless needs_to_create_image?
 
     CreatePageImagesJob.perform_later(@page.story_id, @page.next_page.id)

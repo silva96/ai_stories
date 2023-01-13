@@ -17,6 +17,10 @@ class Story < ApplicationRecord
     broadcast_update_to self, partial: 'stories/story', locals: { page: self }, target: 'story-wrapper'
   end
 
+  def to_param
+    [id, title.parameterize].join('-')
+  end
+
   private
 
   def create_pages
