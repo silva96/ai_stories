@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_13_031203) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_13_130417) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_13_031203) do
   create_table "stories", force: :cascade do |t|
     t.string "main_character"
     t.string "secondary_character"
-    t.string "villian"
+    t.string "villain"
     t.text "excerpt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

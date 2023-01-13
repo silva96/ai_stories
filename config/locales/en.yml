@@ -1,33 +1,36 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  open_main_menu: "Open main menu"
+  create_new_story: "Create new Story"
+  story_galery: "Story Gallery"
+  close_menu: "Close Menu"
+  donate: "Donate"
+  created_by: "Created by Benjamín Silva"
+  in: "in"
+  image_generating: "Image is being generated"
+  prev_page: "Prev. page"
+  next_page: "Next page"
+  the_end: "The End."
+  home:
+    hero_title: "Generate Storybooks for your kids using Artificial Intelligence"
+    hero_description: "Add main characters (your kids), secondary characters (their friends), provide extra details and click Generate. A story with images and multiple pages will be generated."
+  story_generating: "Please wait, your story is being generated ..."
+  community_stories: "Community stories"
+  read_story: "Read story"
+  stories_form:
+    main_character: "Main character(s)"
+    main_character_description: 'Example: "Teodora, the princess, the most beautiful girl in the kingdom"'
+    main_character_placeholder: "Teodora, the princess"
+    secondary_character: "Secondary character(s)"
+    secondary_character_placeholder: "Luca, the prince"
+    secondary_character_description: 'Example: "Luca, the prince, Teodora''s brave brother and Pola, their loyal yellow dog"'
+    villain: "Villain(s)"
+    villain_placeholder: "Bosco, the bulldog"
+    villain_description: "Example: Bosco, the bulldog that always wanted to eat them alive."
+    image_style: "Style of the images"
+    image_style_placeholder: "van Gogh style"
+    image_style_description: "Example: Cartoon, Hyper-realistic, van Gogh style, 3d figures, Peppa Pig style. Detailed"
+    extra_details: "Extra details"
+    extra_details_placeholder: "Example: The story happens in the mid age, in Rome. The kingdom is located in a high mountain surrounded by rivers. Teodora recently will have her 12th birthday and she wants a horse as a gift."
+    extra_details_description: "Add details about the story, anything relevant you want to be included."
+    do_the_magic: "Do the magic"
+

@@ -5,17 +5,17 @@
   <div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
     <div>
       <div>
-        <h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">Generate Storybooks for your kids using Artificial Intelligence</h1>
+        <h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl"><%= t('home.hero_title') %></h1>
         <p class="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
-          Add main characters (your kids), secondary characters (their friends) and a little excerpt and click Generate. A story with images and multiple pages will be generated.
+          <%= t('home.hero_description') %>
         </p>
         <div class="mt-8 flex gap-x-4 sm:justify-center">
           <%= link_to new_story_path, class: 'inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700' do %>
-            Generate a story
+            <%= t('create_new_story') %>
             <span class="text-indigo-200" aria-hidden="true">&rarr;</span>
           <% end %>
           <%= link_to stories_path, class: 'inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20' do %>
-            See gallery
+            <%= t('story_galery') %>
             <span class="text-gray-400" aria-hidden="true">&rarr;</span>
           <% end %>
         </div>

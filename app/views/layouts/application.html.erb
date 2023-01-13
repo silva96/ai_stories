@@ -21,9 +21,14 @@
         <%= yield %>
       </main>
       <footer class="text-center mt-12">
-        <p>Created by Benjamín Silva</p>
-        <p><a class="text-indigo-600 hover:text-indigo-900" href="https://twitter.com/bsilva96">@bsilva96</a> in Twitter</p>
-        <p class="my-4"><a href="https://www.paypal.com/donate/?hosted_button_id=TKN2THHAQAYX8" class="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">Donate</a></p>
+        <p><%= t('created_by') %></p>
+        <p><a class="text-indigo-600 hover:text-indigo-900" href="https://twitter.com/bsilva96">@bsilva96</a> <%= t('in') %> Twitter</p>
+        <p class="my-4">
+          <a href="https://www.paypal.com/donate/?hosted_button_id=TKN2THHAQAYX8"
+             class="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+            <%= t('donate') %>
+          </a>
+        </p>
       </footer>
     </div>
   </body>
