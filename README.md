@@ -40,7 +40,7 @@ bin/rails db:create
 bin/rails db:schema:load
 
 ### How to run the app
-  - bin/rails dev
+  - bin/dev
   - open your browser and go to http://localhost:3000
 
 ### How to run the test suite
