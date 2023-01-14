@@ -32,6 +32,7 @@ How do stories look like:
   - Create a OPENAI_ACCESS_TOKEN in https://beta.openai.com/account/api-keys
   - mv .env-example .env
   - Copy the OPENAI_ACCESS_TOKEN into the .env
+  - Be sure to enclose the tolen in double quotes after the equal sign
 
 ### Database creation
 bin/rails db:create
@@ -39,9 +40,13 @@ bin/rails db:create
 ### Database initialization
 bin/rails db:schema:load
 
+### Dependencies installation
+  - bundle install
+  - yarn install
+
 ### How to run the app
-  - bin/rails dev
-  - open your browser and go to http://localhost:3000
+  - bin/dev
+  - open your browser and go to http://127.0.0.1:3000
 
 ### How to run the test suite
 No tests yet for this toy project yet.
