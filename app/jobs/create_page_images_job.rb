@@ -6,7 +6,7 @@ class CreatePageImagesJob < ApplicationJob
   queue_as :default
 
   def perform(story_id, page_id)
-    page = Page.find_by(id: page_id, story_id:)
+    page = Page.find_by(id: page_id, story_id: story_id)
     page.update(generating_image: true)
     response = create_image(page)
     update_image(page, page_id, response, story_id)
