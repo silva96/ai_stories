@@ -49,5 +49,8 @@ class CreatePageImagesJob < ApplicationJob
         filename: "story_#{story_id}_page_#{page_id}.png"
       }, generating_image: false
     )
+  rescue NoMethodError => e
+    Airbrake.notify(e, response:) if ENV.fetch('AIRBRAKE_PROJECT_ID', nil)
+    raise e
   end
 end
