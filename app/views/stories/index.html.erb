@@ -3,7 +3,7 @@
   <ul role="list" class="space-y-3">
     <% @stories.each do |story| %>
       <li class="overflow-hidden rounded-md bg-white px-6 py-4 shadow">
-        <h2 class="text-2xl mb-4"><%= story.title %></h2>
+        <h2 class="text-2xl mb-4"><%= story.title %> <span class="text-sm text-gray-500">- <%= story.user.username %></span></h2>
         <p><%= story.excerpt %></p>
         <div class="text-right mt-4">
           <%= link_to t('read_story'), story_path(story), class: 'text-indigo-600 hover:text-indigo-900' %>
