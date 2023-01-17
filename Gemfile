@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.0'
 
+gem 'aws-sdk-s3'
 gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
