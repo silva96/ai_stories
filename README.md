@@ -40,9 +40,13 @@ bin/rails db:create
 ### Database initialization
 bin/rails db:schema:load
 
+### Dependencies installation
+  - bundle install
+  - yarn install
+
 ### How to run the app
-  - bin/rails dev
-  - open your browser and go to http://localhost:3000
+  - bin/dev
+  - open your browser and go to http://127.0.0.1:3000
 
 ### How to run the test suite
 No tests yet for this toy project yet.
