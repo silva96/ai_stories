@@ -31,8 +31,8 @@ es:
   story_generating: "Por favor espera, tu historia se está generando..."
   community_stories: "Historias de la comunidad"
   read_story: "Leer historia"
-  destroy_story: "Destruir historia"
-  confirm_destroy_story: "¿Está seguro?"
+  delete_story: "Eliminar historia"
+  confirm_delete_story: "¿Está seguro?"
   stories_form:
     main_character: "Personaje(s) principal(es)"
     main_character_description: 'Ejemplo: "Teodora, la princesa, la niña más hermosa del reino"'
