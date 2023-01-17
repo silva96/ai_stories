@@ -1,7 +1,6 @@
 es:
   open_main_menu: "Abrir menú principal"
   create_new_story: "Crear nueva Historia"
-  story_galery: "Galería de Historias"
   close_menu: "Cerrar Menú"
   donate: "Donar"
   created_by: "Creado por Benjamín Silva"
@@ -13,6 +12,22 @@ es:
   home:
     hero_title: "Genera cuentos para tus hijos usando Inteligencia Artificial"
     hero_description: "Agrega personajes principales (tus hijos), personajes secundarios (sus amigos), provee detalles adicionales y haz clic en Generar. Se generará una historia con imágenes y varias páginas."
+    3_steps: "Gratis y en 3 simples pasos *"
+    free_description_html: "<p>A pesar de que este proyecto fue creado sin fines de lucro, funciona utilizando un servicio de Inteligencia Artificial llamado OpenAI, al cual deberás registrarte.</p>
+                            <p class='mt-4'>Ellos te dan 18 dólares de créditos gratuitos que en nuestra plataforma te servirán para crear alrededor de 50 cuentos."
+    register_at_open_ai: "1. Registrarse en OpenAI."
+    register_at_open_ai_description_html: >-
+      <p>Anda a <a href="https://beta.openai.com/signup" target="_blank" class="text-indigo-600">https://beta.openai.com/signup</a> y crea una cuenta gratuitamente para el servicio OpenAI.</p>
+      <p class="mt-4">Después del registro, anda a <a href="https://beta.openai.com/account/api-keys" target="_blank" class="text-indigo-600">https://beta.openai.com/account/api-keys</a> y genera una API key.</p>
+      <p class="mt-4">¡Importante! guarda la llave generada en un documento o en algún lugar donde puedas copiarla más tarde, la usaremos.</p>
+    register_at_this_platform: "2. Registrarse en esta plataforma."
+    register_at_this_platform_description_html:
+      <p>Antes de poder crear Historias, debes crear una cuenta en esta plataforma, para que puedas luego configurar tu token de OpenAI.</p>
+      <p class="mt-4">Para eso, anda a <a href="%{sign_up_url}" class="text-indigo-600">la página de Registro aquí &rarr;</a></p>
+    save_token: "3. Establece el token de OpenAI en tu configuración."
+    save_token_description_html: >-
+      <p>Anda a <a href="${setings_url}" target="_blank" class="text-indigo-600">la página de Ajustes aquí &rarr;</a> y configura el token de OpenAI que obtuviste en el paso 1.</p>
+      <p class="mt-4">¡Listo! ahora puedes crear historias siempre que tenga crédito de OpenAI.</p>
   story_generating: "Por favor espera, tu historia se está generando..."
   community_stories: "Historias de la comunidad"
   read_story: "Leer historia"
@@ -33,3 +48,31 @@ es:
     extra_details_placeholder: "Ejemplo: La historia sucede en la edad media, en Roma. El reino está ubicado en una alta montaña rodeada de ríos. Teodora cumplirá recientemente 12 años y quiere un caballo de regalo."
     extra_details_description: "Agrega detalles sobre la historia, cualquier cosa relevante que desees incluir."
     do_the_magic: "Hacer magia"
+  user_created_successfully: "Usuario creado correctamente"
+  please_log_in: "Por favor inicia sesión"
+  sign_up: "Registrarse"
+  logged_in: "Sesión iniciada correctamente"
+  settings: "Ajustes"
+  save_settings: "Guardar ajustes"
+  user_updated_successfully: "Usuario actualizado correctamente"
+  if_change_password: "Si deseas cambiar tu contraseña"
+  change_password: "Cambiar contraseña"
+  my_stories: "Mis historias"
+  sign_in: "Iniciar sesión"
+  sign_out: "Cerrar sesión"
+  incorrect_username_or_password: "Nombre de usuario o contraseña incorrectos"
+  logged_out_successfully: "Sesión cerrada correctamente"
+  user_deleted_successfully: "Usuario eliminado correctamente"
+  danger_area: "Área de peligro"
+  are_you_sure: "Estás seguro/a?"
+  delete_account: "Eliminar mi cuenta y mis datos"
+  user_menu: "Menú de usuario"
+  i_dont_have_an_account_html: "Aún no tengo una cuenta &rarr;"
+  i_already_have_an_account_html: "Ya tengo una cuenta &rarr;"
+  you_need_api_token: "Necesitas un token de OpenAI para crear historias."
+  open_ai_token_instructions_html: "Por favor lee las instrucciones de configuración cuidadosamente &rarr;"
+  pagination:
+    showing: "Mostrando"
+    to: "al"
+    of: "de"
+    results: "resultados"

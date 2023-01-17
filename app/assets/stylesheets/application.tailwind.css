@@ -1,7 +1,6 @@
+@import 'styles.css';
+@import 'animations.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.book-font {
-  font-family: 'Dancing Script', cursive;
-}

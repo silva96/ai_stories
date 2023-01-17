@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class StoriesController < ApplicationController
+  before_action :authenticate_user, only: %i[new create]
+  include Pagy::Backend
+
   def index
-    @stories = Story.all.order(created_at: :desc)
+    @pagy, @stories = pagy(Story.all.order(created_at: :desc))
   end
 
   def show
@@ -11,11 +14,13 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @story = Story.new
+    redirect_to settings_path, alert: t('you_need_api_token') and return if current_user.open_ai_token.blank?
+
+    @story = current_user.stories.new
   end
 
   def create
-    @story = Story.new(story_params)
+    @story = current_user.stories.build(story_params)
 
     if @story.save
       redirect_to story_path(@story)

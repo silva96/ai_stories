@@ -11,4 +11,5 @@
       </li>
     <% end %>
   </ul>
+  <%= render partial: 'layouts/application/pagination', locals: { records: @stories, pagy: @pagy } %>
 </div>

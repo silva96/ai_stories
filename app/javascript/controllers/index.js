@@ -4,8 +4,11 @@
 
 import { application } from './application'
 
+import FlashesController from './flashes_controller'
+
 import PageNavigationController from './page_navigation_controller'
 
 import ToggableController from './toggable_controller'
+application.register('flashes', FlashesController)
 application.register('page-navigation', PageNavigationController)
 application.register('toggable', ToggableController)

@@ -2,9 +2,9 @@
   <div>
     <nav class="flex h-9 items-center justify-between" aria-label="Global">
       <div class="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-        <a href="/" class="-m-1.5 p-1.5">
+        <%= link_to(current_user ? dashboard_path : root_path, class: '-m-1.5 p-1.5') do %>
           <span class="book-font  text-2xl">AiStories</span>
-        </a>
+        <% end %>
       </div>
       <div class="flex lg:hidden">
         <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" data-action="toggable#toggle">
@@ -16,14 +16,16 @@
         </button>
       </div>
       <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12">
-        <%= link_to(t('create_new_story'), new_story_path, class: 'font-semibold text-gray-900 hover:text-gray-900') %>
-        <%= link_to(t('story_galery'), stories_path, class: 'font-semibold text-gray-900 hover:text-gray-900') %>
+        <%= link_to(t('my_stories'), dashboard_path, class: 'font-semibold text-gray-900 hover:text-gray-900') %>
+        <%= link_to(t('community_stories'), stories_path, class: 'font-semibold text-gray-900 hover:text-gray-900') %>
       </div>
       <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
-        <a href="https://www.paypal.com/donate/?hosted_button_id=TKN2THHAQAYX8"
-           class="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-          <%= t('donate') %>
-        </a>
+        <%= link_to(t('create_new_story'), new_story_path, class: 'mr-4 inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-indigo-600 shadow-sm ring-1 ring-indigo-600/10 hover:ring-indigo-600/20') %>
+        <% if current_user %>
+          <%= button_to(t('sign_out'), sign_out_path, method: :delete, class: 'mr-4 inline-block rounded-lg px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20') %>
+        <% else %>
+          <%= link_to(t('sign_in'), sign_in_path, class: 'mr-4 inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20') %>
+        <% end %>
       </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
@@ -49,8 +51,14 @@
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
               <%= link_to(t('create_new_story'), new_story_path, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10') %>
-              <%= link_to(t('story_galery'), stories_path, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10') %>
+              <%= link_to(t('community_stories'), stories_path, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10') %>
               <%= link_to(t('donate'), 'https://www.paypal.com/donate/?hosted_button_id=TKN2THHAQAYX8', class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10') %>
+              <div class="border-t border-gray-200"></div>
+              <% if current_user %>
+                <%= button_to(t('sign_out'), sign_out_path, method: :delete, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-red-500 hover:bg-gray-400/10') %>
+              <% else %>
+                  <%= link_to(t('sign_in'), sign_in_path, class: '-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-indigo-600 hover:bg-gray-400/10') %>
+              <% end %>
             </div>
           </div>
         </div>

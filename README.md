@@ -2,7 +2,7 @@
 ### Generate stories for your kids using Artificial Intelligence
 Add main characters (your kids), secondary characters (their friends) and a little excerpt and click Generate. A story with images and multiple pages will be generated.
 
-The software uses OpenAi GPT-3 (Davinci-003 and Dall-E) to generate the stories, summaries, titles and images.
+The software uses OpenAI GPT-3 (Davinci-003 and Dall-E) to generate the stories, summaries, titles and images.
 
 The software's Tech Stack: Ruby on Rails + Hotwire.
 
@@ -29,9 +29,10 @@ How do stories look like:
   - PostgreSQL
 
 ### Configuration
-  - Create a OPENAI_ACCESS_TOKEN in https://beta.openai.com/account/api-keys
   - mv .env-example .env
-  - Copy the OPENAI_ACCESS_TOKEN into the .env
+  - Run bin/rails db:encryption:init and copy each key to the .env file
+  - Create an OpenAI API Token at https://beta.openai.com/account/api-keys
+  - Create a user and add the OpenAI API Token in the settings (it will be encrypted before stored 🔐 ✅)
 
 ### Database creation
 bin/rails db:create

@@ -1,0 +1,24 @@
+<div class="mx-auto max-w-3xl px-8">
+  <h1 class="text-3xl mb-8"><%= t('my_stories') %></h1>
+  <% if @stories.any? %>
+    <ul role="list" class="space-y-3">
+      <% @stories.each do |story| %>
+        <li class="overflow-hidden rounded-md bg-white px-6 py-4 shadow">
+          <h2 class="text-2xl mb-4"><%= story.title %></h2>
+          <p><%= story.excerpt %></p>
+          <div class="text-right mt-4">
+            <%= link_to t('read_story'), story_path(story), class: 'text-indigo-600 hover:text-indigo-900' %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <%= render partial: 'layouts/application/pagination', locals: { records: @stories, pagy: @pagy } %>
+  <% else %>
+    <%= link_to new_story_path, class: 'relative block w-full rounded-lg border-2 border-dashed border-gray-300 p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-indigo-600 mx-auto">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+      </svg>
+      <span class="mt-2 block text-sm font-medium text-gray-900"><%= t('create_new_story') %></span>
+    <% end %>
+  <% end %>
+</div>
