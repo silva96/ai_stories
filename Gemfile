@@ -5,16 +5,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.0'
 
+gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'dotenv-rails'
 gem 'image_processing'
 gem 'jbuilder'
 gem 'jsbundling-rails'
+gem 'pagy'
 gem 'pg'
 gem 'propshaft'
 gem 'puma'
 gem 'rails'
+gem 'rails-i18n'
 gem 'redis'
 gem 'ruby-openai'
 gem 'stimulus-rails'

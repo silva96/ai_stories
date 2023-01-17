@@ -1,0 +1,8 @@
+es:
+  activerecord:
+    attributes:
+      user:
+        username: "Nombre de usuario"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        open_ai_token: "API token de OpenAI"

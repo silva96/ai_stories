@@ -5,7 +5,11 @@ require 'open-uri'
 class CreatePageImagesJob < ApplicationJob
   queue_as :default
 
-  def perform(story_id, page_id)
+  def perform(story_id:, page_id:, current_user_id:)
+    user = User.find(current_user_id)
+    return if user.open_ai_token.blank?
+
+    @client = OpenAI::Client.new(access_token: user.open_ai_token)
     page = Page.find_by(id: page_id, story_id:)
     page.update(generating_image: true)
     response = create_image(page)
@@ -21,11 +25,10 @@ class CreatePageImagesJob < ApplicationJob
   end
 
   def create_prompt_content(page)
-    client = OpenAI::Client.new
     prompt = "generate a prompt for dall-e to represent this scene with an illustration:\n\n#{page.content}" \
              "\n\nHaving this context in mind:\n\n#{page.story.main_character}\n#{page.story.secondary_character}."
 
-    client.completions(
+    @client.completions(
       parameters: {
         model: 'text-davinci-003',
         prompt:, max_tokens: (DAVINCI_MAX_TOKENS - prompt.size)
@@ -34,10 +37,9 @@ class CreatePageImagesJob < ApplicationJob
   end
 
   def create_image(page)
-    client = OpenAI::Client.new
     prompt = "Create a #{page.story.image_style} illustration for a kid's book " \
              "representing the following scene:\n\n #{create_prompt(page)}"
-    client.images.generate(parameters: { prompt:, n: 1 })
+    @client.images.generate(parameters: { prompt:, n: 1 })
   end
 
   def update_image(page, page_id, response, story_id)

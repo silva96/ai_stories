@@ -16,7 +16,8 @@
   <body>
     <div class="isolate bg-slate-50 min-h-screen">
       <%= yield(:pre_navbar_content) if content_for?(:pre_navbar_content) %>
-      <%= render partial: 'layouts/navbar' %>
+      <%= render partial: 'layouts/application/navbar' %>
+      <%= render partial: 'layouts/application/flashes' %>
       <main class="pt-8">
         <%= yield %>
       </main>

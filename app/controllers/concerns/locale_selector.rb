@@ -3,6 +3,7 @@
 module LocaleSelector
   def set_locale
     I18n.locale = infer_locale
+    @pagy_locale = I18n.locale.to_s
   end
 
   def infer_locale
