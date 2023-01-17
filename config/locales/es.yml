@@ -26,7 +26,7 @@ es:
       <p class="mt-4">Para eso, anda a <a href="%{sign_up_url}" class="text-indigo-600">la página de Registro aquí &rarr;</a></p>
     save_token: "3. Establece el token de OpenAI en tu configuración."
     save_token_description_html: >-
-      <p>Anda a <a href="${setings_url}" target="_blank" class="text-indigo-600">la página de Ajustes aquí &rarr;</a> y configura el token de OpenAI que obtuviste en el paso 1.</p>
+      <p>Anda a <a href="%{settings_url}" target="_blank" class="text-indigo-600">la página de Ajustes aquí &rarr;</a> y configura el token de OpenAI que obtuviste en el paso 1.</p>
       <p class="mt-4">¡Listo! ahora puedes crear historias siempre que tenga crédito de OpenAI.</p>
   story_generating: "Por favor espera, tu historia se está generando..."
   community_stories: "Historias de la comunidad"
@@ -76,3 +76,4 @@ es:
     to: "al"
     of: "de"
     results: "resultados"
+  fork_me_on_github: "Forkeame en Github"

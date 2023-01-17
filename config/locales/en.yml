@@ -26,7 +26,7 @@ en:
       <p class="mt-4">For that, go to <a href="${sign_up_url}" target="_blank" class="text-indigo-600">the Sign Up page here &rarr;</a></p>
     save_token: "3. Set the OpenAI token in your settings."
     save_token_description_html: >-
-      <p>Go to <a href="${setings_url}" target="_blank" class="text-indigo-600">the Settings page here &rarr;</a> and set the OpenAI token you got in step 1.</p>
+      <p>Go to <a href="%{settings_url}" target="_blank" class="text-indigo-600">the Settings page here &rarr;</a> and set the OpenAI token you got in step 1.</p>
       <p>Done! you can now create stories as long as you have OpenAI credit.</p>
   story_generating: "Please wait, your story is being generated ..."
   community_stories: "Community stories"
@@ -76,4 +76,5 @@ en:
     to: "to"
     of: "of"
     results: "results"
+  fork_me_on_github: "Fork me on Github"
 
