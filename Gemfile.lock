@@ -66,6 +66,10 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    airbrake (13.0.3)
+      airbrake-ruby (~> 6.0)
+    airbrake-ruby (6.2.0)
+      rbtree3 (~> 0.5)
     ast (2.4.2)
     aws-eventstream (1.2.0)
     aws-partitions (1.693.0)
@@ -203,6 +207,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    rbtree3 (0.7.0)
     redis (5.0.6)
       redis-client (>= 0.9.0)
     redis-client (0.12.1)
@@ -262,6 +267,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  airbrake
   aws-sdk-s3
   bcrypt
   bootsnap
