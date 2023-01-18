@@ -32,7 +32,7 @@ class StoriesController < ApplicationController
   def destroy
     @story = current_user.stories.find(params[:id])
     @story.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path, notice: I18n.t('story_deleted_successfully')
   end
 
   private

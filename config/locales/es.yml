@@ -33,6 +33,7 @@ es:
   read_story: "Leer historia"
   delete_story: "Eliminar historia"
   confirm_delete_story: "¿Está seguro?"
+  story_deleted_successfully: "Historia eliminada con éxito"
   stories_form:
     main_character: "Personaje(s) principal(es)"
     main_character_description: 'Ejemplo: "Teodora, la princesa, la niña más hermosa del reino"'
