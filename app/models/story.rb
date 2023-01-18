@@ -5,6 +5,13 @@ class Story < ApplicationRecord
   belongs_to :user, optional: true
   after_create_commit :create_pages
 
+  scope :for_community_index, lambda {
+    includes(:user)
+      .where.not(title: nil)
+      .where.not(excerpt: nil)
+      .order(created_at: :desc)
+  }
+
   def prompt
     @prompt ||= "Write a kids story with the following characters and details:\n" \
                 "Main character: #{main_character}\n" \

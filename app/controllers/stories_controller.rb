@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
   include Pagy::Backend
 
   def index
-    @pagy, @stories = pagy(Story.includes(:user).all.order(created_at: :desc))
+    @pagy, @stories = pagy(Story.for_community_index)
   end
 
   def show
