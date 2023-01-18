@@ -31,6 +31,9 @@ en:
   story_generating: "Please wait, your story is being generated ..."
   community_stories: "Community stories"
   read_story: "Read story"
+  delete_story: "Delete story"
+  confirm_delete_story: "Are you sure?"
+  story_deleted_successfully: "Story deleted successfully"
   stories_form:
     main_character: "Main character(s)"
     main_character_description: 'Example: "Teodora, the princess, the most beautiful girl in the kingdom"'

@@ -8,6 +8,8 @@
           <p><%= story.excerpt %></p>
           <div class="text-right mt-4">
             <%= link_to t('read_story'), story_path(story), class: 'text-indigo-600 hover:text-indigo-900' %>
+            |
+            <%= link_to t('delete_story'), story_path(story), data: { turbo_method: :delete, turbo_confirm: t('confirm_delete_story') }, class: 'text-red-500 hover:text-red-900' %>
           </div>
         </li>
       <% end %>

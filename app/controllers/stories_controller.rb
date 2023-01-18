@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class StoriesController < ApplicationController
-  before_action :authenticate_user, only: %i[new create]
+  before_action :authenticate_user, only: %i[new create destroy]
   include Pagy::Backend
 
   def index
@@ -27,6 +27,12 @@ class StoriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @story = current_user.stories.find(params[:id])
+    @story.destroy
+    redirect_to dashboard_path, notice: I18n.t('story_deleted_successfully')
   end
 
   private

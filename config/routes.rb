@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   root 'site#index'
 
-  resources :stories, except: %i[edit destroy] do
+  resources :stories, except: %i[edit] do
     resources :pages, only: :show
   end
 
