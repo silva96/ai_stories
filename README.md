@@ -15,7 +15,7 @@ How to create a story:
 
 <img width="730" alt="Screen Shot 2023-01-13 at 02 25 42" src="https://user-images.githubusercontent.com/4019924/212244002-40009696-c69d-45f5-a30a-b33154c62bd7.png">
 
-How do stories look like:
+What the stories look like:
 
 <img width="1539" alt="image" src="https://user-images.githubusercontent.com/4019924/212244105-592457fd-f6d9-45ce-8308-61ec92fd9e00.png">
 
