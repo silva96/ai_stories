@@ -21,11 +21,11 @@ en:
       <p class="mt-4">After registration go to <a href="https://beta.openai.com/account/api-keys" target="_blank" class="text-indigo-600">https://beta.openai.com/account/api-keys</a> and generate an API key.</p>
       <p class="mt-4">Important! save that api key in a document or somewhere you can copy it from later, we are going to use it.</p>
     register_at_this_platform: "2. Register at this platform."
-    register_at_this_platform_description_html: >-
+    register_at_this_platform_description_html:
       <p>Before you can create any Stories, you need to create an account in this platform, so you can configure your api token in your settings.</p>
-      <p class="mt-4">For that, go to <a href="${sign_up_url}" target="_blank" class="text-indigo-600">the Sign Up page here &rarr;</a></p>
+      <p class="mt-4">For that, go to <a href="%{sign_up_url}" target="_blank" class="text-indigo-600">the Sign Up page here &rarr;</a></p>
     save_token: "3. Set the OpenAI token in your settings."
-    save_token_description_html: >-
+    save_token_description_html:
       <p>Go to <a href="%{settings_url}" target="_blank" class="text-indigo-600">the Settings page here &rarr;</a> and set the OpenAI token you got in step 1.</p>
       <p>Done! you can now create stories as long as you have OpenAI credit.</p>
   story_generating: "Please wait, your story is being generated ..."
