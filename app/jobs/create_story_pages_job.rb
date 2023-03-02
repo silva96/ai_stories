@@ -27,7 +27,7 @@ class CreateStoryPagesJob < ApplicationJob
   def create_pages(story)
     response = create_pages_content(story)
     index = 1
-    response['choices'][0]['message']["content"].gsub("\n\n", "\n").split("\n").each do |text|
+    response['choices'][0]['message']['content'].gsub("\n\n", "\n").split("\n").each do |text|
       if text.strip.size > 10
         story.pages << Page.new(content: text.strip, number: index)
         index += 1
@@ -40,7 +40,7 @@ class CreateStoryPagesJob < ApplicationJob
     @client.chat(
       parameters: {
         model: 'gpt-3.5-turbo',
-        messages: [{ role: "user", content: story.prompt}],
+        messages: [{ role: 'user', content: story.prompt }],
         max_tokens: (DAVINCI_MAX_TOKENS - story.prompt.size)
       }
     )

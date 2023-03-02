@@ -21,7 +21,7 @@ class CreateStoryExcerptJob < ApplicationJob
 
   def create_excerpt(story)
     response = create_excerpt_content(story)
-    story.update(excerpt: response['choices'][0]['message']["content"].strip)
+    story.update(excerpt: response['choices'][0]['message']['content'].strip)
   end
 
   def create_excerpt_content(story)
@@ -30,7 +30,7 @@ class CreateStoryExcerptJob < ApplicationJob
     @client.chat(
       parameters: {
         model: 'gpt-3.5-turbo',
-        messages: [{ role: "user", content: "#{story_content}\nTl;dr:"}],
+        messages: [{ role: 'user', content: "#{story_content}\nTl;dr:" }],
         max_tokens: (400 + story_content.size)
       }
     )
