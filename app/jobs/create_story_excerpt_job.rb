@@ -21,16 +21,16 @@ class CreateStoryExcerptJob < ApplicationJob
 
   def create_excerpt(story)
     response = create_excerpt_content(story)
-    story.update(excerpt: response['choices'][0]['text'].strip)
+    story.update(excerpt: response['choices'][0]['message']["content"].strip)
   end
 
   def create_excerpt_content(story)
     story_content = story.pages.order(number: :asc).pluck(:content).join("\n\n")
 
-    @client.completions(
+    @client.chat(
       parameters: {
-        model: 'text-davinci-003',
-        prompt: "#{story_content}\nTl;dr:",
+        model: 'gpt-3.5-turbo',
+        messages: [{ role: "user", content: "#{story_content}\nTl;dr:"}],
         max_tokens: (400 + story_content.size)
       }
     )

@@ -17,13 +17,16 @@ class CreateStoryTitleJob < ApplicationJob
 
   def create_title(story)
     response = create_title_content(story)
-    story.update(title: response['choices'][0]['text'].strip)
+    story.update(title: response['choices'][0]['message']["content"].strip)
   end
 
   def create_title_content(story)
     prompt = "Create a 5 to 8 words title for a book about this: \n\n#{story.excerpt}"
-    @client.completions(
-      parameters: { model: 'text-davinci-003', prompt:, max_tokens: (200 + prompt.size) }
+    @client.chat(
+      parameters: {
+        model: 'gpt-3.5-turbo',
+        messages: [{ role: "user", content: prompt }],
+        max_tokens: (200 + prompt.size) }
     )
   end
 end

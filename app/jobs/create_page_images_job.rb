@@ -21,17 +21,18 @@ class CreatePageImagesJob < ApplicationJob
 
   def create_prompt(page)
     response = create_prompt_content(page)
-    response['choices'][0]['text'].strip
+    response['choices'][0]['message']["content"].strip
   end
 
   def create_prompt_content(page)
     prompt = "generate a prompt for dall-e to represent this scene with an illustration:\n\n#{page.content}" \
              "\n\nHaving this context in mind:\n\n#{page.story.main_character}\n#{page.story.secondary_character}."
 
-    @client.completions(
+    @client.chat(
       parameters: {
-        model: 'text-davinci-003',
-        prompt:, max_tokens: (DAVINCI_MAX_TOKENS - prompt.size)
+        model: 'gpt-3.5-turbo',
+        messages: [{ role: "user", content: prompt}],
+        max_tokens: (DAVINCI_MAX_TOKENS - prompt.size)
       }
     )
   end
