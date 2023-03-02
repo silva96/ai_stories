@@ -29,7 +29,7 @@ class CreateStoryExcerptJob < ApplicationJob
 
     @client.completions(
       parameters: {
-        model: 'text-davinci-003',
+        model: 'gpt-3.5-turbo',
         prompt: "#{story_content}\nTl;dr:",
         max_tokens: (400 + story_content.size)
       }

@@ -39,7 +39,7 @@ class CreateStoryPagesJob < ApplicationJob
   def create_pages_content(story)
     @client.completions(
       parameters: {
-        model: 'text-davinci-003',
+        model: 'gpt-3.5-turbo',
         prompt: story.prompt,
         max_tokens: (DAVINCI_MAX_TOKENS - story.prompt.size)
       }

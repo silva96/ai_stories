@@ -30,7 +30,7 @@ class CreatePageImagesJob < ApplicationJob
 
     @client.completions(
       parameters: {
-        model: 'text-davinci-003',
+        model: 'gpt-3.5-turbo',
         prompt:, max_tokens: (DAVINCI_MAX_TOKENS - prompt.size)
       }
     )
