@@ -5,4 +5,4 @@
 #   config.organization_id = ENV.fetch('OPENAI_ORGANIZATION_ID') # Optional.
 # end
 
-DAVINCI_MAX_TOKENS = 2500
+DAVINCI_MAX_TOKENS = 4096
