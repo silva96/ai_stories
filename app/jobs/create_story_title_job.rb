@@ -17,7 +17,7 @@ class CreateStoryTitleJob < ApplicationJob
 
   def create_title(story)
     response = create_title_content(story)
-    story.update(title: response['choices'][0]['message']["content"].strip)
+    story.update(title: response['choices'][0]['message']['content'].strip)
   end
 
   def create_title_content(story)
@@ -25,8 +25,9 @@ class CreateStoryTitleJob < ApplicationJob
     @client.chat(
       parameters: {
         model: 'gpt-3.5-turbo',
-        messages: [{ role: "user", content: prompt }],
-        max_tokens: (200 + prompt.size) }
+        messages: [{ role: 'user', content: prompt }],
+        max_tokens: (200 + prompt.size)
+      }
     )
   end
 end

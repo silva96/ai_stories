@@ -21,7 +21,7 @@ class CreatePageImagesJob < ApplicationJob
 
   def create_prompt(page)
     response = create_prompt_content(page)
-    response['choices'][0]['message']["content"].strip
+    response['choices'][0]['message']['content'].strip
   end
 
   def create_prompt_content(page)
@@ -31,7 +31,7 @@ class CreatePageImagesJob < ApplicationJob
     @client.chat(
       parameters: {
         model: 'gpt-3.5-turbo',
-        messages: [{ role: "user", content: prompt}],
+        messages: [{ role: 'user', content: prompt }],
         max_tokens: (DAVINCI_MAX_TOKENS - prompt.size)
       }
     )
