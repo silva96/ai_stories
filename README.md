@@ -6,6 +6,10 @@ The software uses OpenAI GPT-3 (Davinci-003 and Dall-E) to generate the stories,
 
 The software's Tech Stack: Ruby on Rails + Hotwire.
 
+### Demo
+
+https://storiesgenerator.com
+
 ### Author
 Benjamín Silva<br>
 [Donate if you liked the project? 🍻](https://www.paypal.com/donate/?hosted_button_id=TKN2THHAQAYX8)
