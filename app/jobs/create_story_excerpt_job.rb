@@ -21,18 +21,18 @@ class CreateStoryExcerptJob < ApplicationJob
 
   def create_excerpt(story)
     response = create_excerpt_content(story)
+    puts response
     story.update(excerpt: response['choices'][0]['message']['content'].strip)
   end
 
   def create_excerpt_content(story)
     story_content = story.pages.order(number: :asc).pluck(:content).join("\n\n")
-    story_content = story_content[0..(DAVINCI_MAX_TOKENS - 800)] # just in case we go over the limit
 
     @client.chat(
       parameters: {
         model: 'gpt-3.5-turbo',
         messages: [{ role: 'user', content: "#{story_content}\nTl;dr:" }],
-        max_tokens: (400 + story_content.size)
+        max_tokens: 200
       }
     )
   end

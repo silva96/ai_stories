@@ -41,7 +41,7 @@ class CreateStoryPagesJob < ApplicationJob
       parameters: {
         model: 'gpt-3.5-turbo',
         messages: [{ role: 'user', content: story.prompt }],
-        max_tokens: (DAVINCI_MAX_TOKENS - story.prompt.size)
+        max_tokens: 1000
       }
     )
   end

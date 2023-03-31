@@ -32,7 +32,7 @@ class CreatePageImagesJob < ApplicationJob
       parameters: {
         model: 'gpt-3.5-turbo',
         messages: [{ role: 'user', content: prompt }],
-        max_tokens: (DAVINCI_MAX_TOKENS - prompt.size)
+        max_tokens: 200
       }
     )
   end

@@ -26,7 +26,7 @@ class CreateStoryTitleJob < ApplicationJob
       parameters: {
         model: 'gpt-3.5-turbo',
         messages: [{ role: 'user', content: prompt }],
-        max_tokens: (200 + prompt.size)
+        max_tokens: 100
       }
     )
   end
