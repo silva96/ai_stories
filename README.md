@@ -2,9 +2,13 @@
 ### Generate stories for your kids using Artificial Intelligence
 Add main characters (your kids), secondary characters (their friends) and a little excerpt and click Generate. A story with images and multiple pages will be generated.
 
-The software uses OpenAI GPT-3 (Davinci-003 and Dall-E) to generate the stories, summaries, titles and images.
+The software uses OpenAI GPT-3.5-turbo (Dall-E) to generate the stories, summaries, titles and images.
 
 The software's Tech Stack: Ruby on Rails + Hotwire.
+
+### Demo
+
+https://storiesgenerator.com
 
 ### Author
 Benjamín Silva<br>
