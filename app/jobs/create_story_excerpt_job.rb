@@ -21,7 +21,6 @@ class CreateStoryExcerptJob < ApplicationJob
 
   def create_excerpt(story)
     response = create_excerpt_content(story)
-    puts response
     story.update(excerpt: response['choices'][0]['message']['content'].strip)
   end
 
