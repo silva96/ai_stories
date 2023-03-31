@@ -26,6 +26,7 @@ class CreateStoryExcerptJob < ApplicationJob
 
   def create_excerpt_content(story)
     story_content = story.pages.order(number: :asc).pluck(:content).join("\n\n")
+    story_content = story_content[0..(DAVINCI_MAX_TOKENS - 800)] # just in case we go over the limit
 
     @client.chat(
       parameters: {
